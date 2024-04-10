@@ -40,4 +40,5 @@ const CreateAnimal = () => {
     )
 }
 
+
 export default CreateAnimal
