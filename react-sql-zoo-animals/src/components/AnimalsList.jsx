@@ -11,7 +11,7 @@ const AnimalsList = ({ animalsList, handleDelete, setShowID }) => {
                     <li key={id}>
                         <span>id: {id}</span>
                         <span>name: {name}</span>
-                        <span>type: {animalClass}</span>
+                        <span>class: {animalClass}</span>
                         <span>weight: {weight}</span>
                         <span>lives in zoo: {lives_in_zoo ? "Yes" : "No"}</span>
                         <button onClick={() => handleDelete(id)}>Delete</button>

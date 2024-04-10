@@ -11,7 +11,7 @@ const connectionToDB = mysql.createConnection({
     host: "localHost",
     user: "root",
     password: "",
-    database: "kab212_11_react_zoo",
+    database: "react-sql-zoo-animals",
 });
 
 // POST
