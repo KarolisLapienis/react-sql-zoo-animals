@@ -4,7 +4,7 @@ import AnimalsList from './components/AnimalsList';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const animalsList = { id: 1, name: "Liūtas", animalClass: "Žinduolis", weight: "350", lives_in_zoo: 1 }
+const animalsList = [ { id: 1, name: "Liūtas", animalClass: "Žinduolis", weight: "350", lives_in_zoo: 0 } ]
 
 
 
@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <CreateAnimal/>
-      <AnimalsList/>
+      <AnimalsList animalsList={animalsList}/>
     </div>
   );
 }

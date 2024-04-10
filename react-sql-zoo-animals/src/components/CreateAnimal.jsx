@@ -33,6 +33,8 @@ const CreateAnimal = () => {
 
                 <label>Does animal live in the zoo?</label>
                 <input type="checkbox" checked={livesInZoo} onChange= {() => setLivesInZoo(prev => !prev)} />
+
+                <button onClick={handleFormSubmit}>submit</button>
             </form>
         </div>
     )

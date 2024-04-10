@@ -1,22 +1,26 @@
 import React from "react";
 
-const AnimalsList = ({animalsList, handleDelete, setShowID}) => {
-    // const {id, name, animalClass, weight, lives_in_zoo} = animalsList;
-    const id = 1
-    const name = "as"
-    const animalClass = "bird"
-    const weight = 2
-    const lives_in_zoo = 1
 
+const AnimalsList = ({ animalsList, handleDelete, setShowID }) => {
     return (
-        <li>
-            <span>{id}</span>
-            <span>{name}</span>
-            <span>{animalClass}</span>
-            <span>{weight}</span>
-            <span>{lives_in_zoo}</span>
-        </li>
-    )
-}
+        <>
+            {animalsList && animalsList.map(animal => {
+                console.log(animal)
+                const { id, name, animalClass, weight, lives_in_zoo } = animal;
+                return (
+                    <li key={id}>
+                        <span>id: {id}</span>
+                        <span>name: {name}</span>
+                        <span>type: {animalClass}</span>
+                        <span>weight: {weight}</span>
+                        <span>lives in zoo: {lives_in_zoo ? "Yes" : "No"}</span>
+                        <button onClick={() => handleDelete(id)}>Delete</button>
+                        <button onClick={() => setShowID(id)}>Show ID</button>
+                    </li>
+                );
+            })}
+        </>
+    );
+};
 
-export default AnimalsList
+export default AnimalsList;
