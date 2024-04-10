@@ -20,13 +20,12 @@ function App() {
     axios
       .post("http://localhost:3003/zoo", create)
       .then ((res)=> setUpdateTime(Date.now()))
-
-  })
+  }, [create])
 
 
   return (
     <div className="App">
-      <CreateAnimal/>
+      <CreateAnimal setCreate={setCreate}/>
       <AnimalsList animalsList={animalsList}/>
     </div>
   );

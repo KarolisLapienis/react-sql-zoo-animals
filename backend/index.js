@@ -21,7 +21,7 @@ app.post ("/zoo", (req, res)=> {
     connectionToDB.query(sqlQuery, [req.body.name, req.body.class, req.body.weight, req.body.lives_in_zoo], 
     function(err, result) {
         if (err) throw err;
-        res.json({message: "ok"});
+        res.json(result);
     });
 });
 
@@ -31,7 +31,7 @@ app.get("/zoo", (req,res) => {
 
     connectionToDB.query(sqlQuery, function (err, result) {
         if(err) throw err;
-        res.json({message : "ok"});
+        res.json(result);
     });
 });
 
@@ -46,14 +46,13 @@ app.delete("/zoo/:id", (req, res) => {
 })
 
 //UPDATE
-
-app.put("zoo/:id", (req,res) => {
+app.put("/zoo/:id", (req,res) => {
     const sqlQuery = `UPDATE zoo SET name=?, class=?, weight=?, lives_in_zoo=? WHERE id=?`;
 
     connectionToDB.query(sqlQuery, [req.body.name, req.body.class, req.body.weight, req.body.lives_in_zoo, req.params.id],
     function(err, result) {
         if (err) throw err;
-        res.json({message: "updated"});
+        res.json(result);
     })
 });
 
